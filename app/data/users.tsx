@@ -2,8 +2,8 @@ import { useRangeSlider } from "@chakra-ui/react"
 
 const users = [
     {
-        id: 6688999,
-        password: 'Peter$12345678',
+        id: 6588018,
+        password: '1234',
         fname: 'Peter',
         sname: 'Aekmepel',
         imgsrc: 'https://firebasestorage.googleapis.com/v0/b/storage1-15612.appspot.com/o/6F00A038-886C-478C-925E-B38A1CE157E5_1_105_c.jpeg?alt=media&token=ca1db308-8c27-4dc5-ad74-62debfa04eda',

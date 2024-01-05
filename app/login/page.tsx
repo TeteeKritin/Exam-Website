@@ -2,13 +2,15 @@
 import React from "react";
 import { useState } from "react";
 import users from "../data/users";
+import LoginSuccess from "./success/[slug]/page";
+import { Center, Square, Circle } from '@chakra-ui/react'
 
 const Login = () => {
   const [studentID, setStudentID] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const attemptLogin = (e) => {
+  const attemptLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const user = users.find((user) => user.id.toString() === studentID);
@@ -25,8 +27,9 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-row justify-center items-center min-h-[100vh]">
-      <div className="border w-fit border-black rounded-2xl text-center p-7 flex justify-between">
+    <div className="flex flex-row justify-center items-center">
+  <Center className=" h-full">
+      <div className="border w-fit border-black rounded-2xl text-center p-7 flex justify-between shadow-2xl">
         <form onSubmit={attemptLogin}>
           <h1 className="font-extrabold text-3xl">Login</h1>
           <div className="m-4">
@@ -53,6 +56,7 @@ const Login = () => {
           {errorMessage && <p className="text-red-500">{errorMessage}</p>}
         </form>
       </div>
+    </Center>
     </div>
   );
 };
