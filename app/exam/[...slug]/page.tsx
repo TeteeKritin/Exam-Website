@@ -14,9 +14,9 @@ import exams from "@/app/data/exams";
 import Link from "next/link";
 import { useState } from "react";
 
-const [value, setValue] = React.useState("1");
 
 export default function Exam({ params }: { params: { slug: string[] } }) {
+  const [value, setValue] = React.useState("1");
   const slug = params.slug;
   if (slug.length === 1) {
     const examNum = exams[Number(slug[0])];
