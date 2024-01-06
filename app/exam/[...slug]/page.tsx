@@ -14,6 +14,8 @@ import exams from "@/app/data/exams";
 import Link from "next/link";
 import { useState } from "react";
 
+const [value, setValue] = React.useState("1");
+
 export default function Exam({ params }: { params: { slug: string[] } }) {
   const slug = params.slug;
   if (slug.length === 1) {
@@ -45,12 +47,13 @@ export default function Exam({ params }: { params: { slug: string[] } }) {
     );
   } else if (slug.length === 3) {
     if (Number(slug[1]) < exams[Number(slug[0])].questions.length) {
+
       const currExam = exams[Number(slug[0])];
       const questionNum = Number(slug[1]);
       const Qtype = currExam.questions[questionNum].type;
       const currA = currExam.questions[questionNum].answer;
       const qScore = currExam.questions[questionNum].score;
-      const [value, setValue] = React.useState("1");
+
 
 
       const clickHandlerType0 = () => {
