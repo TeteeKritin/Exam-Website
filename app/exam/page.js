@@ -8,7 +8,7 @@ export default function showExam(){
           <h1 className="p-12 font-extrabold text-3xl">Available Exam</h1>
           <div className="flex flex-row gap-4">
             {exams.map((qE, index) => (
-              <div key={index} className="p-12 px-12">
+              <div key={index} className="p-12 border border-black mx-10 rounded-full ">
                 <h1 className=" font-bold"> {qE.name}</h1>
                 <h1 className="mb-10"> {qE.instructor}</h1>
                 <Link href={`exam/${index}`} key={index}>
