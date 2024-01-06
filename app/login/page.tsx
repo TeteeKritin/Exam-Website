@@ -27,7 +27,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-row justify-center items-center">
+    <div className="h-screen">
   <Center className=" h-full">
       <div className="border w-fit border-black rounded-2xl text-center p-7 flex justify-between shadow-2xl">
         <form onSubmit={attemptLogin}>

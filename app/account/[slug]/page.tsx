@@ -11,7 +11,13 @@ export default function AccSuccess({ params }: { params: { slug: string } }) {
 
   function Handleexam (){
     return(
-        window.location.href = '/exam/'+slug
+        window.location.href = '/exam/'
+    )
+  }
+
+  function HandleAcc (){
+    return(
+      window.location.href = '/login/success/'+slug
     )
   }
 
@@ -26,12 +32,15 @@ export default function AccSuccess({ params }: { params: { slug: string } }) {
             alt="pfp"
             className="rounded-full w-[200px] h-[200px]"
           ></img>
-          <div>
+          <div className="mt-4 mb-4">
           <h1>Tel:{foundUsers?.tel}</h1>
           <h1>Year: {foundUsers?.year}</h1>
           <h1>Section: {foundUsers?.sec}</h1>
           </div>
-          <button onClick={Handleexam} className="bg-black rounded-2xl text-white px-4"> Back to Exam </button>
+          <div className="flex flex-row gap-4">
+          <button onClick={Handleexam} className=" bg-black text-white px-6 py-2 rounded-2xl"> Back to Exams </button>
+          <button onClick={HandleAcc} className=" bg-black text-white px-6 py-2 rounded-2xl"> Back to Account </button>
+          </div>
         </Center>
       </div>
     </>

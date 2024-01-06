@@ -16,7 +16,7 @@ function Handleacc (){
 }
 
 function Handleexams(){
-  window.location.href = '/exam/[...slug]'
+  window.location.href = '/exam/'
 }
 
 
@@ -24,22 +24,23 @@ if(foundUsers){
   return (
     <>
     <div className="h-screen">
-      <Center className="h-full flex-row">
-        <div className=" text-center">
-        <Image
+      <Center className="h-full flex-col">
+      <img
           src={foundUsers.imgsrc}
           width={64}
           height={64}
           alt="pfp"
-          className=" rounded-full w-[150px] h-[150px]"
+          className=" rounded-full w-[200px] h-[200px]"
         />
-        <h1 className="text-2xl font-extrabold">Login As</h1>
-        <h1>
+        <div className=" text-center items-center">
+        
+        <h1 className="text-2xl font-extrabold mt-6">Login As</h1>
+        <h1 className="mb-6 ">
           {foundUsers.fname} {foundUsers.sname}
         </h1>
-        <div className=" bg-black rounded-lg text-white">
-        <button onClick={Handleexams}>View Exams</button>
-        <button onClick={Handleacc}>View Account</button>
+        <div className= "flex flex-row gap-4">
+        <button className=" bg-black text-white px-6 py-2 rounded-2xl" onClick={Handleexams}>View Exams</button>
+        <button className=" bg-black text-white px-6 py-2 rounded-2xl" onClick={Handleacc}>View Account</button>
         </div>
         </div>
         </Center>

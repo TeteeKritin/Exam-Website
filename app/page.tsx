@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <main>
       <div>
-        <Exam></Exam>
+        <Login></Login>
       </div>
     </main>
   )
