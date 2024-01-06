@@ -83,8 +83,8 @@ export default function Exam({ params }: { params: { slug: string[] } }) {
                 <Input placeholder="answer" required className="w-full my-4" value={value} onChange={(event) => setValue(event.target.value)}/>
               ) : Qtype == 1 ? (
                 currExam.questions[questionNum].options.map((item, index) => (
-                  <div className="mt-4">
-                    <RadioGroup key={index} onChange={setValue} value={value}>
+                  <div className="mt-4" key={index}>
+                    <RadioGroup  onChange={setValue} value={value}>
                       <Radio value={String(index)}>{item}</Radio>
                     </RadioGroup>
                   </div>
