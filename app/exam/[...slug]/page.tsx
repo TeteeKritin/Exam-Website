@@ -130,11 +130,12 @@ export default function Exam({ params }: { params: { slug: string[] } }) {
     } else {
       const examNum = exams[Number(slug[0])];
       let fullScore = 0;
-      {examNum.questions.map(
-        (item, index) => (
-          fullScore = fullScore + item.score
-        )
-      )}
+      
+      for (let index = 0; index < examNum.questions.length; index++) {
+        const item = examNum.questions[index];
+        fullScore = fullScore + item.score;
+      }
+      
       return (
         <div className="h-screen">
         <Center className="h-full">
