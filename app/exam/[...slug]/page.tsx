@@ -84,7 +84,7 @@ export default function Exam({ params }: { params: { slug: string[] } }) {
               ) : Qtype == 1 ? (
                 currExam.questions[questionNum].options.map((item, index) => (
                   <div className="mt-4">
-                    <RadioGroup onChange={setValue} value={value}>
+                    <RadioGroup key={index} onChange={setValue} value={value}>
                       <Radio value={String(index)}>{item}</Radio>
                     </RadioGroup>
                   </div>
@@ -101,7 +101,7 @@ export default function Exam({ params }: { params: { slug: string[] } }) {
                   <Select placeholder="Select option" value={value} onChange={(event) => setValue(event.target.value)}>
                     {currExam.questions[questionNum].options.map(
                       (item, index) => (
-                        <option value={String(index)}>{item}</option>
+                        <option key={index} value={String(index)}>{item}</option>
                       )
                     )}
                   </Select>
@@ -111,7 +111,7 @@ export default function Exam({ params }: { params: { slug: string[] } }) {
                 <Stack direction="column">
                   {currExam.questions[questionNum].options.map(
                     (item, index) => (
-                      <Checkbox>{item}</Checkbox>
+                      <Checkbox key={index}>{item}</Checkbox>
                     )
                   )}
                 </Stack>
